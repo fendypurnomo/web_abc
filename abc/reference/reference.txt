@@ -1,0 +1,8 @@
+codexworld.com
+https://stackoverflow.com/questions/277589/validation-of-radio-button-group-using-jquery-validation-plugin
+https://stackoverflow.com/questions/18754020/bootstrap-with-jquery-validation-plugin/18754221
+https://www.fadlur.com/?s=gis
+https://code.tutsplus.com/tutorials/an-introduction-to-the-html5-history-api--cms-22160
+https://webdesign.tutsplus.com/id/tutorials/lovely-smooth-page-transitions-with-the-history-web-api--cms-26405
+https://youtube.github.io/spfjs/documentation/
+https://github.com/youtube/spfjs

@@ -1,0 +1,77 @@
+==================================
+Perintah mysql pada command prompt
+==================================
+
+Melihat Database
+- mysql>show databases;
+
+Membuat Database
+- mysql>create database nama_database;
+
+Menghapus Database
+- mysql>drop database nama_database;
+
+Menggunakan Database
+- mysql>use nama_database;
+
+Membuat Table
+- mysql>create table nama_tabel (nama_field tipe_data(value));
+
+Menghapus Table
+- mysql>drop table nama_tabel;
+
+Melihat Table
+- mysql>show tables;
+
+Memilih data dari table
+- mysql>select * from nama_tabel;
+
+Memilih data dari Table tertentu
+- mysql>select * from nama_tabel where field = "value";
+
+Menambahkan data pada table
+- mysql>insert into nama_tabel (nama_field) values ('value');
+
+Mengubah data pada table yang sudah ada
+- mysql>update nama_tabel set field = 'value' where field = 'value';
+
+Memanggil/menggunakan database "latihan"
+- mysql>use latihan;
+
+Membuat table baru “table latihan”
+- mysql>create table latihan (id char (5),jenis char (20),tahun char (4),harga int (8));
+
+Melihat semua table yg telah dibuat dalam database "latihan"
+- mysql>show tables;
+
+Melihat struktur table latihan
+- mysql>desc latihan;
+
+Menghapus table latihan
+- mysql>drop latihan;
+
+Mengganti nama tabel latihan menjadi tabel contoh
+- mysql>rename table latihan to contoh;
+ 
+Mengubah struktur tabel latihan dengan menambahkan field baru "warna"
+- mysql>alter table latihan add warna char (10);
+atau
+- mysql>alter table latihan add warna char (10) after jenis;
+
+Enum untuk membuat validasi
+- mysql>create table latihan (id int(5), nama char(20), jenis kelamin enum("Pria","Wanita"), no telepon char(20), alamat varchar(50), agama varchar(15));
+
+Mengubah struktur tabel dengan menambahkan index
+- mysql>alter table latihan add index(id);
+
+Mengubah struktur tabel dengan menghapus index
+- mysql>alter table latihan drop index(id);
+ 
+Mengubah struktur tabel dengan mengubah field
+- mysql>alter table latihan change nama varchar(20);
+
+Mengubah struktur tabel latihan dengan menambah validasi jenis kelamin
+- mysql>alter table latihan change jenis kelamin enum("Pria","Wanita");
+
+Mengubah struktur tabel dengan menghapus field "keterangan"
+- mysql>alter table latihan drop keterangan;

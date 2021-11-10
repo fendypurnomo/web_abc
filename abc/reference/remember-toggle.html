@@ -1,0 +1,20 @@
+<script>
+	$(document).ready(function()
+	{
+		var last = $.cookie('activeAccordionGroup');
+		if (last != null)
+		{
+			//remove default collapse settings
+			$("#accordion2 .collapse").removeClass('in');
+			//show the last visible group
+			$("#"+last).collapse("show");
+		}
+	});
+
+	//when a group is shown, save it as the active accordion group
+	$("#accordion2").bind('shown', function()
+	{
+		var active = $("#accordion2 .in").attr('id');
+		$.cookie('activeAccordionGroup', active)
+	});
+</script>

@@ -1,0 +1,70 @@
+<!-- 1 -->
+<!-- Custom styles to disable animation temporarily (inlined for show) -->
+<style>
+  /* Probably doesn't need all these prefixes but oh well */
+  .disable-animations, .disable-animations * {
+    /* CSS transitions */
+    -o-transition-property: none !important;
+    -moz-transition-property: none !important;
+    -webkit-transition-property: none !important;
+    transition-property: none !important;
+    /* CSS transforms */
+    -o-transform: none !important;
+    -moz-transform: none !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+    /* CSS animations */
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    animation: none !important;
+  }
+</style>
+
+<!-- AdminLTE JavaScript -->
+<script src="AdminLTE/dist/js/app.js"></script>
+
+<!-- Custom scripts loaded AFTER AdminLTE JavaScript (inlined for show) -->
+<script>
+  $(function ($) {
+    var $body = $('body');
+    // On click, capture state and save it in localStorage
+    $($.AdminLTE.options.sidebarToggleSelector).click(function () {
+      localStorage.setItem('sidebar', $body.hasClass('sidebar-collapse') ? 1 : 0);
+    });
+
+    // On ready, read the set state and collapse if needed
+    if (localStorage.getItem('sidebar') === '0') {
+      $body.addClass('disable-animations sidebar-collapse');
+      requestAnimationFrame(function () {
+        $body.removeClass('disable-animations');
+      });
+    }
+  });
+</script>
+
+<!-- 2 -->
+<body class="skin-black sidebar-mini">
+  <script>
+    (function () {
+      if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
+        var body = document.getElementsByTagName('body')[0];
+        body.className = body.className + ' sidebar-collapse';
+      }
+    })();
+  </script>
+
+  ...
+
+  <script>
+    // Click handler can be added latter, after jQuery is loaded...
+    $('.sidebar-toggle').click(function(event) {
+      event.preventDefault();
+      if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
+        sessionStorage.setItem('sidebar-toggle-collapsed', '');
+      } else {
+        sessionStorage.setItem('sidebar-toggle-collapsed', '1');
+      }
+    });
+  </script>
+</body>

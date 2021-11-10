@@ -1,0 +1,11 @@
+primary
+007bff
+
+warning
+ffc107
+
+success
+28a745
+
+danger
+dc3545
